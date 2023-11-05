@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231105 23:52:13.294" rpa="false" schemaversion="4">
+<suite id="s1" name="Create project API" source="C:\Users\Admin\PycharmProjects\Android_automate\Test_case\Create_project_API.robot">
+<test id="s1-t1" name="Create_project" line="18">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20231105 23:52:13.642" level="INFO">Creating Session using : alias=mysession, url=https://api.todoist.com/sync/v9/sync, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20231105 23:52:13.642" endtime="20231105 23:52:13.644"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Authorization=${bearerToken}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231105 23:52:13.645" level="INFO">${headers} = {'Authorization': 'Bearer 89b09496b5688d756d960b1987021095f658a513', 'Content-Type': 'application/json'}</msg>
+<status status="PASS" starttime="20231105 23:52:13.644" endtime="20231105 23:52:13.645"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${array}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20231105 23:52:13.645" level="INFO">${array} = []</msg>
+<status status="PASS" starttime="20231105 23:52:13.645" endtime="20231105 23:52:13.645"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${my_variable}</var>
+<arg>projects</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231105 23:52:13.646" level="INFO">${my_variable} = projects</msg>
+<status status="PASS" starttime="20231105 23:52:13.645" endtime="20231105 23:52:13.646"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${array}</arg>
+<arg>${my_variable}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231105 23:52:13.646" endtime="20231105 23:52:13.646"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random_uuid}</var>
+<arg>random.randrange(1, 999999)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231105 23:52:13.647" level="INFO">${random_uuid} = 441094</msg>
+<status status="PASS" starttime="20231105 23:52:13.646" endtime="20231105 23:52:13.647"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random_temp_id_int}</var>
+<arg>random.randrange(1, 999999)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231105 23:52:13.647" level="INFO">${random_temp_id_int} = 86729</msg>
+<status status="PASS" starttime="20231105 23:52:13.647" endtime="20231105 23:52:13.647"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random_char}</var>
+<arg>random.choice('${char_set}')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231105 23:52:13.648" level="INFO">${random_char} = y</msg>
+<status status="PASS" starttime="20231105 23:52:13.647" endtime="20231105 23:52:13.648"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${random_string}</var>
+<arg>${random_string}${random_char}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231105 23:52:13.648" level="INFO">${random_string} = y</msg>
+<status status="PASS" starttime="20231105 23:52:13.648" endtime="20231105 23:52:13.648"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${args_data}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231105 23:52:13.649" level="INFO">${args_data} = {}</msg>
+<status status="PASS" starttime="20231105 23:52:13.648" endtime="20231105 23:52:13.649"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${args_data}</arg>
+<arg>name=Shopping List3</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231105 23:52:13.649" endtime="20231105 23:52:13.649"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${commands}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20231105 23:52:13.649" level="INFO">${commands} = []</msg>
+<status status="PASS" starttime="20231105 23:52:13.649" endtime="20231105 23:52:13.650"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${command_data}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231105 23:52:13.650" level="INFO">${command_data} = {}</msg>
+<status status="PASS" starttime="20231105 23:52:13.650" endtime="20231105 23:52:13.650"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${command_data}</arg>
+<arg>type=project_add</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231105 23:52:13.650" endtime="20231105 23:52:13.650"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${command_data}</arg>
+<arg>temp_id=${random_temp_id_int}-${random_string}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231105 23:52:13.651" endtime="20231105 23:52:13.651"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${command_data}</arg>
+<arg>uuid=${random_uuid}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231105 23:52:13.651" endtime="20231105 23:52:13.652"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${command_data}</arg>
+<arg>args=${args_data}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231105 23:52:13.652" endtime="20231105 23:52:13.652"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${commands}</arg>
+<arg>${command_data}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231105 23:52:13.652" endtime="20231105 23:52:13.653"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>sync_token=*</arg>
+<arg>resource_types=${array}</arg>
+<arg>commands=${commands}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231105 23:52:13.653" level="INFO">${body} = {'sync_token': '*', 'resource_types': ['projects'], 'commands': [{'type': 'project_add', 'temp_id': '86729-y', 'uuid': 441094, 'args': {'name': 'Shopping List3'}}]}</msg>
+<status status="PASS" starttime="20231105 23:52:13.653" endtime="20231105 23:52:13.653"/>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<var>${responds}</var>
+<arg>mysession</arg>
+<arg>/</arg>
+<arg>data=${body}</arg>
+<arg>headers=${headers}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<msg timestamp="20231105 23:52:13.654" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20231105 23:52:14.934" level="INFO">POST Request : url=https://api.todoist.com/sync/v9/sync/ 
+ path_url=/sync/v9/sync/ 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer 89b09496b5688d756d960b1987021095f658a513', 'Content-Type': 'application/json', 'Content-Length': '164'} 
+ body={"sync_token": "*", "resource_types": ["projects"], "commands": [{"type": "project_add", "temp_id": "86729-y", "uuid": 441094, "args": {"name": "Shopping List3"}}]} 
+ </msg>
+<msg timestamp="20231105 23:52:14.934" level="INFO">POST Response : url=https://api.todoist.com/sync/v9/sync/ 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Date': 'Sun, 05 Nov 2023 15:52:12 GMT', 'Cache-Control': 'no-cache', 'Content-Encoding': 'gzip', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Server': 'gunicorn', 'Set-Cookie': 'csrf=3eb8c2c0dea54035851c84957cbdb688; Expires=Wed, 02-Nov-2033 15:52:11 GMT; Secure; Path=/; SameSite=None, tduser=v4.public.eyJ1c2VyX2lkIjogNDY5MTE2MzEsICJleHAiOiAiMjAyMy0xMS0xOVQxNTo1MjoxMSswMDowMCJ9T2cTTfppSaqOq-gXFi8eGTYEd70gI7-MaVziPBrKhOru6uRU10RLIr_9XWybvc_gIOK11k1UuFx9NXoaK0vsAQ; Domain=.todoist.com; Expires=Sun, 19-Nov-2023 15:52:11 GMT; Max-Age=1209600; Secure; HttpOnly; Path=/', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload', 'Vary': 'Accept-Encoding', 'X-Cache': 'Miss from cloudfront', 'Via': '1.1 962e310f27984ea0c7cc6be8ef9f9b2a.cloudfront.net (CloudFront)', 'X-Amz-Cf-Pop': 'KUL50-P1', 'X-Amz-Cf-Id': 'IfkEIgFtQtiMy_cM9W1rcKk72CWWD1hKVFeJpeCzNhJUL-Io72UkbA=='} 
+ body={"full_sync":true,"projects":[{"child_order":0,"collapsed":false,"color":"charcoal","created_at":"2023-11-02T09:10:43Z","id":"2322962709","inbox_project":true,"is_archived":false,"is_deleted":false,"is_favorite":false,"name":"Inbox","parent_id":null,"shared":false,"sync_id":null,"updated_at":"2023-11-02T09:10:43Z","view_style":"list"},{"child_order":1,"collapsed":false,"color":"charcoal","created_at":"2023-11-02T18:56:55Z","id":"2322992281","is_archived":false,"is_deleted":false,"is_favorite":false,"name":"project1","parent_id":null,"shared":false,"sync_id":null,"updated_at":"2023-11-02T18:56:55Z","view_style":"list"},{"child_order":2,"collapsed":false,"color":"charcoal","created_at":"2023-11-03T09:23:58Z","id":"2323018652","is_archived":false,"is_deleted":false,"is_favorite":false,"name":"Shopping List","parent_id":null,"shared":false,"sync_id":null,"updated_at":"2023-11-03T09:23:58Z","view_style":"list"},{"child_order":3,"collapsed":false,"color":"charcoal","created_at":"2023-11-05T15:51:49Z","id":"2323117226","is_archived":false,"is_deleted":false,"is_favorite":false,"name":"Shopping List2","parent_id":null,"shared":false,"sync_id":null,"updated_at":"2023-11-05T15:51:49Z","view_style":"list"},{"child_order":4,"collapsed":false,"color":"charcoal","created_at":"2023-11-05T15:52:11Z","id":"2323117252","is_archived":false,"is_deleted":false,"is_favorite":false,"name":"Shopping List3","parent_id":null,"shared":false,"sync_id":null,"updated_at":"2023-11-05T15:52:11Z","view_style":"list"}],"sync_status":{"441094":"ok"},"sync_token":"vwdBMrbz_-HLHiuCg7vRg_bXuG0wRxx_C8HdlofEjj2cZghySa2KuCQA2G49i_4oAdcPqv9x6RfoSWcS7wqEf96fskMakn1cN1DyHKPYDNr48g","temp_id_mapping":{"86729-y":"2323117252"}} 
+ </msg>
+<msg timestamp="20231105 23:52:14.934" level="INFO">C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1100: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.todoist.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg timestamp="20231105 23:52:14.934" level="INFO">${responds} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231105 23:52:13.653" endtime="20231105 23:52:14.934"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${responds.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231105 23:52:14.935" endtime="20231105 23:52:14.935"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${responds.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231105 23:52:14.935" endtime="20231105 23:52:14.936"/>
+</kw>
+<status status="PASS" starttime="20231105 23:52:13.641" endtime="20231105 23:52:14.936"/>
+</test>
+<status status="PASS" starttime="20231105 23:52:13.297" endtime="20231105 23:52:14.937"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Create project API">Create project API</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231105 23:52:13.654" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+</errors>
+</robot>
